@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE VINCI TATTOO STUDIO | Art & Legacy</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Tangerine:wght@400;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.2/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="./images/vinciLogo.png" alt="THE VINCI" class="nav-logo-img">
+            <div class="logo-text">
+                <span>THE VINCI</span>
+                <span>TATTOO STUDIO</span>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+
+            <a href="#portfolio">PORTFOLIO</a>
+            <a href="#artists">ARTISTS</a>
+            <a href="#videos">VIDEOS</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+
+        <div class="nav-hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+
+    </nav>
+
+    <div class="mobile-menu">
+        <div class="menu-close">
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="menu-bg"></div>
+        <div class="menu-links">
+            <a href="#home" style="--i:1">HOME</a>
+            <a href="#about" style="--i:4">ABOUT</a>
+
+            <a href="#portfolio" style="--i:3">PORTFOLIO</a>
+            <a href="#artists" style="--i:2">ARTISTS</a>
+            <a href="#videos" style="--i:5">VIDEOS</a>
+            <a href="#contact" style="--i:6">CONTACT</a>
+        </div>
+        <div class="menu-footer">
+            <p>THE VINCI TATTOO STUDIO</p>
+        </div>
+    </div>
+
+    <main class="hero-scene" id="home">
+        <!-- Background Layers -->
+        <div class="hero-bg"></div>
+        <div class="vignette"></div>
+
+        <!-- Particle Background -->
+        <div class="particles-container"></div>
+        <!-- Main Content Wrapper -->
+        <div class="hero-container">
+
+            <!-- Left Content -->
+            <div class="hero-left">
+                <div class="title-wrap">
+                    <div class="vertical-index">
+                        <span>01</span>
+                        <span>02</span>
+                        <span>03</span>
+                    </div>
+                    <div class="title-main">
+                        <span class="small-word">THE</span>
+                        <h1 class="main-title">
+                            <div class="large-word">VINCI</div>
+                            <div class="large-word">TATTOO</div>
+                            <div class="large-word studio-word">STUDIO</div>
+                        </h1>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Statue (Centered Focal Point) -->
+            <div class="hero-center">
+                <div class="vinci-wrapper">
+                    <img src="images/heroVinci.png" alt="Leonardo" class="vinci-statue">
+                </div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="hero-right">
+                <div class="glass-card right-card">
+                    <div class="card-accent"></div>
+                    <h3>LEONARDO'S LEGACY</h3>
+                    <p>Inspired by the genius of Leonardo da Vinci, we blend art, science, and soul to create tattoos
+                        beyond time.</p>
+                    <div class="btn-wrap">
+                        <a href="#about" class="read-more-arrow">Read More <span>→</span></a>
+                    </div>
+                </div>
+
+                <div class="icon-grid">
+                    <div class="icon-item">
+                        <div class="icon-img"><img src="images/icon-skull.png" alt="Anatomical Precision"></div>
+                        <span>ANATOMICAL <br> PRECISION</span>
+                    </div>
+                    <div class="icon-item">
+                        <div class="icon-img"><img src="images/icon-geometry.png" alt="Geometric Harmony"></div>
+                        <span>GEOMETRIC <br> HARMONY</span>
+                    </div>
+                    <div class="icon-item">
+                        <div class="icon-img"><img src="images/icon-vision.png" alt="Artistic Vision"></div>
+                        <span>ARTISTIC <br> VISION</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Philosophy -->
+        <div class="hero-footer">
+            <div class="footer-line"></div>
+            <p>THE VINCI PHILOSOPHY: PRECISION, PASSION, ART.</p>
+        </div>
+    </main>
+
+    <section class="about-section" id="about">
+        <!-- Grid and Atmospheric Layers -->
+        <div class="particles-container"></div>
+        <div class="about-grid-overlay"></div>
+        <div class="about-vignette"></div>
+        <div class="about-dust"></div>
+
+        <div class="about-container">
+            <!-- Left Side: Cinematic Image -->
+            <div class="about-left">
+                <div class="about-image-wrapper">
+                    <img src="images/vinchiStudio.png" alt="Renaissance Tattoo Studio" class="about-main-img">
+                    <div class="img-glow"></div>
+                </div>
+            </div>
+
+            <!-- Right Side: Editorial Content -->
+            <div class="about-right">
+                <div class="content-block">
+                    <h2 class="about-heading">
+                        ABOUT OUR <br>
+                        <span class="heading-sub">STUDIO</span>
+                    </h2>
+
+                    <div class="about-description">
+                        <p class="quote">“We do not imitate the masters — <br> we honor them.”</p>
+                        <p>At The Vinci Tattoo Studio, every line is drawn with intention, every shadow crafted with
+                            emotion, and every masterpiece etched with timeless precision.</p>
+                        <p>Inspired by Renaissance philosophy, classical anatomy, and modern tattoo artistry, our studio
+                            exists where history, skin, and soul converge.</p>
+                        <p class="highlight">This is not simply tattooing. This is immortal craftsmanship.</p>
+                    </div>
+
+                    <div class="about-signature">
+                        <!-- Note: Using a generated signature image link or fallback text -->
+                        <span class="signature-text">Leonardo da Vinci</span>
+                    </div>
+
+                    <div class="about-cta">
+                        <a href="https://wa.me/8337028023?text=Hello!%20I%20would%20like%20to%20explore%20the%20studio%20and%20book%20a%20consultation."
+                            class="btn-explore" target="_blank">
+                            <span>EXPLORE THE STUDIO</span>
+                            <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Far Right: Decorative Panel -->
+                <div class="about-panel">
+                    <div class="panel-inner">
+                        <div class="panel-logo">
+                            <img src="images/emblem.png" alt="Vinci Emblem">
+                        </div>
+                        <div class="panel-sketch">
+                            <img src="images/sketch.png" alt="Anatomical Sketch">
+                        </div>
+                        <div class="panel-quote">
+                            <p>ART IS NEVER FINISHED, <br> ONLY ABANDONED.</p>
+                        </div>
+                    </div>
+                    <div class="panel-border"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR MASTERPIECES SECTION -->
+    <section class="masterpieces-section" id="portfolio">
+        <div class="particles-container"></div>
+        <div class="masterpieces-bg-grid"></div>
+        <div class="masterpieces-vignette"></div>
+
+        <div class="masterpieces-header">
+            <h2 class="section-title">OUR MASTERPIECES</h2>
+        </div>
+
+        <!-- Tattoo Showcase Slider -->
+        <div class="swiper masterpieces-slider">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="pedestal-wrap">
+                        <div class="tattoo-cylinder">
+                            <img src="images/vinci-1.jpg" alt="Mother & Son" class="cylinder-img tattoo-1">
+                        </div>
+                        <div class="pedestal-base"></div>
+                        <div class="pedestal-label">MOTHER & SON</div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="pedestal-wrap dominant">
+                        <div class="tattoo-cylinder">
+                            <img src="images/vinci-5.jpg" alt="Cute Ganesha" class="cylinder-img tattoo-2">
+                        </div>
+                        <div class="pedestal-base"></div>
+                        <div class="pedestal-label">CUTE GANESHA</div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="pedestal-wrap">
+                        <div class="tattoo-cylinder">
+                            <img src="images/vinci-3.jpg" alt="Renaissance Surrealism" class="cylinder-img tattoo-3">
+                        </div>
+                        <div class="pedestal-base"></div>
+                        <div class="pedestal-label">RENAISSANCE SURREALISM</div>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <div class="pedestal-wrap">
+                        <div class="tattoo-cylinder">
+                            <img src="images/vinci-2.jpg" alt="Divine Shiva" class="cylinder-img tattoo-4">
+                        </div>
+                        <div class="pedestal-base"></div>
+                        <div class="pedestal-label">DIVINE SHIVA</div>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="swiper-slide">
+                    <div class="pedestal-wrap">
+                        <div class="tattoo-cylinder">
+                            <img src="images/vinci-4.jpg" alt="Mystic Statue" class="cylinder-img tattoo-5">
+                        </div>
+                        <div class="pedestal-base"></div>
+                        <div class="pedestal-label">MYSTIC STATUE</div>
+                    </div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="swiper-slide">
+                    <div class="pedestal-wrap">
+                        <div class="tattoo-cylinder">
+                            <img src="images/vinci-6.jpg" alt="Zen Future" class="cylinder-img tattoo-6">
+                        </div>
+                        <div class="pedestal-base"></div>
+                        <div class="pedestal-label">ZEN FUTURE</div>
+                    </div>
+                </div>
+                <!-- Slide 7 -->
+                <div class="swiper-slide">
+                    <div class="pedestal-wrap">
+                        <div class="tattoo-cylinder">
+                            <img src="images/vinci-7.jpg" alt="Samurai Spirit" class="cylinder-img tattoo-7">
+                        </div>
+                        <div class="pedestal-base"></div>
+                        <div class="pedestal-label">SAMURAI SPIRIT</div>
+                    </div>
+                </div>
+                <!-- Duplicate for Seamless Loop -->
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="pedestal-wrap">
+                        <div class="tattoo-cylinder">
+                            <img src="images/vinci-1.jpg" alt="Mother & Son" class="cylinder-img tattoo-1">
+                        </div>
+                        <div class="pedestal-base"></div>
+                        <div class="pedestal-label">MOTHER & SON</div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="pedestal-wrap dominant">
+                        <div class="tattoo-cylinder">
+                            <img src="images/vinci-5.jpg" alt="Cute Ganesha" class="cylinder-img tattoo-2">
+                        </div>
+                        <div class="pedestal-base"></div>
+                        <div class="pedestal-label">CUTE GANESHA</div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="pedestal-wrap">
+                        <div class="tattoo-cylinder">
+                            <img src="images/vinci-3.jpg" alt="Renaissance Surrealism" class="cylinder-img tattoo-3">
+                        </div>
+                        <div class="pedestal-base"></div>
+                        <div class="pedestal-label">RENAISSANCE SURREALISM</div>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <div class="pedestal-wrap">
+                        <div class="tattoo-cylinder">
+                            <img src="images/vinci-2.jpg" alt="Divine Shiva" class="cylinder-img tattoo-4">
+                        </div>
+                        <div class="pedestal-base"></div>
+                        <div class="pedestal-label">DIVINE SHIVA</div>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="swiper-slide">
+                    <div class="pedestal-wrap">
+                        <div class="tattoo-cylinder">
+                            <img src="images/vinci-4.jpg" alt="Mystic Statue" class="cylinder-img tattoo-5">
+                        </div>
+                        <div class="pedestal-base"></div>
+                        <div class="pedestal-label">MYSTIC STATUE</div>
+                    </div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="swiper-slide">
+                    <div class="pedestal-wrap">
+                        <div class="tattoo-cylinder">
+                            <img src="images/vinci-6.jpg" alt="Zen Future" class="cylinder-img tattoo-6">
+                        </div>
+                        <div class="pedestal-base"></div>
+                        <div class="pedestal-label">ZEN FUTURE</div>
+                    </div>
+                </div>
+                <!-- Slide 7 -->
+                <div class="swiper-slide">
+                    <div class="pedestal-wrap">
+                        <div class="tattoo-cylinder">
+                            <img src="images/vinci-7.jpg" alt="Samurai Spirit" class="cylinder-img tattoo-7">
+                        </div>
+                        <div class="pedestal-base"></div>
+                        <div class="pedestal-label">SAMURAI SPIRIT</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Navigation -->
+            <div class="swiper-button-prev masterpiece-nav"></div>
+            <div class="swiper-button-next masterpiece-nav"></div>
+        </div>
+
+
+        <!-- Bottom Content: Collage and Editorial -->
+        <div class="masterpieces-bottom">
+            <div class="collage-container">
+                <div class="collage-top">
+                    <div class="collage-item small">
+                        <img src="images/gridImg-1.png" alt="Vitruvian Sketch" class="collage-img">
+                    </div>
+                    <div class="collage-item small">
+                        <img src="images/gridImg-2.png" alt="Anatomical Sketch" class="collage-img">
+                    </div>
+                </div>
+                <div class="collage-item wide">
+                    <img src="images/gridImg-3.png" alt="Studio Interior" class="collage-img">
+                </div>
+            </div>
+
+            <div class="editorial-card glass-card">
+                <div class="card-accent"></div>
+                <span class="card-label">WHERE HISTORY MEETS SKIN</span>
+                <h2 class="card-heading">THE SANCTUARY <br> OF INK</h2>
+                <div class="card-body">
+                    <p>Da Vinci Tattoo and Art Studio is more than a destination—it is a commitment to the sublime.
+                        Guided by the principles of light, shadow, and anatomy, we transform personal narratives into
+                        permanent masterpieces.</p>
+                    <p>We don't just follow trends; we create icons. Experience a studio where every needle stroke is an
+                        act of devotion to the craft.</p>
+                </div>
+                <a href="https://wa.me/8337028023?text=Hello!%20I%20would%20like%20to%20explore%20the%20studio%20and%20book%20a%20consultation."
+                    class="btn-explore" target="_blank">
+                    <span>SECURE YOUR CONSULTATION</span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INK MASTERS SECTION -->
+    <section class="ink-masters-section" id="artists">
+        <div class="particles-container"></div>
+        <div class="masters-container">
+            <div class="masters-header">
+                <span class="masters-label">INK MASTERS</span>
+                <h2 class="masters-title">MEET OUR ARTISTS</h2>
+            </div>
+
+            <div class="masters-grid">
+                <!-- Artist 1 -->
+                <div class="artist-card">
+                    <div class="artist-image-box">
+                        <img src="artist_alessandro_portrait_1778309872557.png" alt="Alessandro" class="artist-img">
+                    </div>
+                    <div class="artist-info">
+                        <h3 class="artist-name">ALESSANDRO</h3>
+                        <p class="artist-specialty">Master of Realism</p>
+                    </div>
+                </div>
+
+                <!-- Artist 2 -->
+                <div class="artist-card">
+                    <div class="artist-image-box">
+                        <img src="artist_sofia_portrait_1778309896193.png" alt="Sofia" class="artist-img">
+                    </div>
+                    <div class="artist-info">
+                        <h3 class="artist-name">SOFIA</h3>
+                        <p class="artist-specialty">Surrealism Specialist</p>
+                    </div>
+                </div>
+
+                <!-- Artist 3 -->
+                <div class="artist-card">
+                    <div class="artist-image-box">
+                        <img src="artist_giulio_portrait_1778309920553.png" alt="Giulio" class="artist-img">
+                    </div>
+                    <div class="artist-info">
+                        <h3 class="artist-name">GIULIO</h3>
+                        <p class="artist-specialty">Portrait Expert</p>
+                    </div>
+                </div>
+
+                <!-- Artist 4 -->
+                <div class="artist-card">
+                    <div class="artist-image-box">
+                        <img src="artist_leonardo_portrait_1778309943164.png" alt="Leonardo" class="artist-img">
+                    </div>
+                    <div class="artist-info">
+                        <h3 class="artist-name">LEONARDO</h3>
+                        <p class="artist-specialty">Black & Gray Artist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM VIDEOS GRID -->
+    <section class="instagram-section" id="videos">
+        <div class="particles-container"></div>
+        <div class="insta-container">
+            <div class="insta-header">
+                <span class="insta-label">FOLLOW THE LEGACY</span>
+                <h2 class="insta-title">THE VINCI ON INSTAGRAM</h2>
+                <a href="#" class="insta-follow-btn">@THEVINCI_STUDIO</a>
+            </div>
+
+            <!-- Instagram Swiper Slider -->
+            <div class="swiper instagram-slider">
+                <div class="swiper-wrapper">
+                    <!-- Video Item 1 -->
+                    <!-- Video Item 1 -->
+                    <div class="swiper-slide insta-item">
+                        <div class="insta-media-wrap">
+                            <video class="insta-video" muted playsinline>
+                                <source src="./videos/denote-1.mp4" type="video/mp4">
+                            </video>
+                            <!-- Minimalist Video Controls -->
+                            <div class="insta-controls">
+                                <div class="insta-progress">
+                                    <div class="insta-progress-bar"></div>
+                                </div>
+                                <div class="insta-bottom-controls">
+                                    <button class="insta-mute-btn">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM3 9v6h4l5 5V4L7 9H3z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="insta-overlay">
+                                <div class="insta-play-btn">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                                <div class="insta-stats">
+                                    <span><svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                        </svg> 1.2k</span>
+                                    <span><svg viewBox="0 0 24 24">
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                        </svg> 84</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Item 2 -->
+                    <div class="swiper-slide insta-item">
+                        <div class="insta-media-wrap">
+                            <video class="insta-video" muted playsinline>
+                                <source src="./videos/denote-2.mp4" type="video/mp4">
+                            </video>
+                            <div class="insta-controls">
+                                <div class="insta-progress">
+                                    <div class="insta-progress-bar"></div>
+                                </div>
+                                <div class="insta-bottom-controls">
+                                    <button class="insta-mute-btn">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM3 9v6h4l5 5V4L7 9H3z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="insta-overlay">
+                                <div class="insta-play-btn">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                                <div class="insta-stats">
+                                    <span><svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                        </svg> 3.5k</span>
+                                    <span><svg viewBox="0 0 24 24">
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                        </svg> 156</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Item 3 -->
+                    <div class="swiper-slide insta-item">
+                        <div class="insta-media-wrap">
+                            <video class="insta-video" muted playsinline>
+                                <source src="./videos/denote-3.mp4" type="video/mp4">
+                            </video>
+                            <div class="insta-controls">
+                                <div class="insta-progress">
+                                    <div class="insta-progress-bar"></div>
+                                </div>
+                                <div class="insta-bottom-controls">
+                                    <button class="insta-mute-btn">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM3 9v6h4l5 5V4L7 9H3z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="insta-overlay">
+                                <div class="insta-play-btn">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                                <div class="insta-stats">
+                                    <span><svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                        </svg> 890</span>
+                                    <span><svg viewBox="0 0 24 24">
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                        </svg> 42</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Item 4 -->
+                    <div class="swiper-slide insta-item">
+                        <div class="insta-media-wrap">
+                            <video class="insta-video" muted playsinline>
+                                <source src="./videos/denote-4.mp4" type="video/mp4">
+                            </video>
+                            <div class="insta-controls">
+                                <div class="insta-progress">
+                                    <div class="insta-progress-bar"></div>
+                                </div>
+                                <div class="insta-bottom-controls">
+                                    <button class="insta-mute-btn">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM3 9v6h4l5 5V4L7 9H3z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="insta-overlay">
+                                <div class="insta-play-btn">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                                <div class="insta-stats">
+                                    <span><svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                        </svg> 2.1k</span>
+                                    <span><svg viewBox="0 0 24 24">
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                        </svg> 98</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video Item 5 -->
+                    <div class="swiper-slide insta-item">
+                        <div class="insta-media-wrap">
+                            <video class="insta-video" muted playsinline>
+                                <source src="./videos/denote-5.mp4" type="video/mp4">
+                            </video>
+                            <div class="insta-controls">
+                                <div class="insta-progress">
+                                    <div class="insta-progress-bar"></div>
+                                </div>
+                                <div class="insta-bottom-controls">
+                                    <button class="insta-mute-btn">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM3 9v6h4l5 5V4L7 9H3z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="insta-overlay">
+                                <div class="insta-play-btn">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                                <div class="insta-stats">
+                                    <span><svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                        </svg> 890</span>
+                                    <span><svg viewBox="0 0 24 24">
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                        </svg> 42</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video Item 6 -->
+                    <div class="swiper-slide insta-item">
+                        <div class="insta-media-wrap">
+                            <video class="insta-video" muted playsinline>
+                                <source src="./videos/denote-6.mp4" type="video/mp4">
+                            </video>
+                            <div class="insta-controls">
+                                <div class="insta-progress">
+                                    <div class="insta-progress-bar"></div>
+                                </div>
+                                <div class="insta-bottom-controls">
+                                    <button class="insta-mute-btn">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM3 9v6h4l5 5V4L7 9H3z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="insta-overlay">
+                                <div class="insta-play-btn">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                                <div class="insta-stats">
+                                    <span><svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                        </svg> 890</span>
+                                    <span><svg viewBox="0 0 24 24">
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                        </svg> 42</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- REPEAT FOR INFINITE LOOP -->
+                    <div class="swiper-slide insta-item">
+                        <div class="insta-media-wrap">
+                            <video class="insta-video" muted playsinline>
+                                <source src="./videos/denote-7.mp4" type="video/mp4">
+                            </video>
+                            <div class="insta-controls">
+                                <div class="insta-progress">
+                                    <div class="insta-progress-bar"></div>
+                                </div>
+                                <button class="insta-mute-btn"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM3 9v6h4l5 5V4L7 9H3z" />
+                                    </svg></button>
+                            </div>
+                            <div class="insta-overlay">
+                                <div class="insta-play-btn">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide insta-item">
+                        <div class="insta-media-wrap">
+                            <video class="insta-video" muted playsinline>
+                                <source src="./videos/denote-8.mp4" type="video/mp4">
+                            </video>
+                            <div class="insta-controls">
+                                <div class="insta-progress">
+                                    <div class="insta-progress-bar"></div>
+                                </div>
+                                <button class="insta-mute-btn"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM3 9v6h4l5 5V4L7 9H3z" />
+                                    </svg></button>
+                            </div>
+                            <div class="insta-overlay">
+                                <div class="insta-play-btn">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide insta-item">
+                        <div class="insta-media-wrap">
+                            <video class="insta-video" muted playsinline>
+                                <source src="./videos/denote-10.mp4" type="video/mp4">
+                            </video>
+                            <div class="insta-controls">
+                                <div class="insta-progress">
+                                    <div class="insta-progress-bar"></div>
+                                </div>
+                                <button class="insta-mute-btn"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM3 9v6h4l5 5V4L7 9H3z" />
+                                    </svg></button>
+                            </div>
+                            <div class="insta-overlay">
+                                <div class="insta-play-btn">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="swiper-slide insta-item">
+                        <div class="insta-media-wrap">
+                            <video class="insta-video" loop muted playsinline poster="images/insta-reel-4.png">
+                                <source src="https://cdn.pixabay.com/video/2023/07/20/172487-847499839_large.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <div class="insta-controls">
+                                <div class="insta-progress">
+                                    <div class="insta-progress-bar"></div>
+                                </div>
+                                <button class="insta-mute-btn"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM3 9v6h4l5 5V4L7 9H3z" />
+                                    </svg></button>
+                            </div>
+                            <div class="insta-overlay">
+                                <div class="insta-play-btn">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  -->
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="swiper-button-next insta-next"></div>
+                <div class="swiper-button-prev insta-prev"></div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination insta-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ART IN MOTION SECTION -->
+    <section class="art-in-motion-section">
+        <div class="particles-container"></div>
+        <div class="motion-bg-overlay"></div>
+        <div class="motion-particles"></div>
+
+        <div class="motion-container">
+            <!-- Left: Editorial Content -->
+            <div class="motion-left">
+                <div class="motion-content-wrap">
+                    <span class="motion-label">ART IN MOTION</span>
+                    <h2 class="motion-heading">WHERE ART <br> COMES ALIVE</h2>
+                    <div class="motion-description">
+                        <p>Every line tells a story. Watch as our artists bring timeless concepts to life through
+                            precision, movement, and emotion.</p>
+                        <p>A cinematic journey into ink, craftsmanship, and Renaissance-inspired artistry.</p>
+                    </div>
+                    <div class="motion-cta">
+                        <a href="#videos" class="watch-film-link">
+                            <span>SEE THE TRANSFORMATION</span>
+                            <span class="film-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Luxury Video Player -->
+            <div class="motion-right">
+                <div class="video-player-container glass-card">
+                    <div class="video-wrapper">
+                        <video id="studioVideo" playsinline loop muted autoplay>
+                            <source src="./videos/studioTour.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
+                        <!-- Custom Video Controls -->
+                        <div class="video-controls-overlay">
+                            <!-- Play/Pause Overlay -->
+                            <div class="center-play-btn">
+                                <div class="play-icon-wrap">
+                                    <svg viewBox="0 0 24 24" class="play-svg">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Controls Bar -->
+                            <div class="controls-bar">
+                                <div class="progress-container">
+                                    <div class="progress-bar">
+                                        <div class="progress-filled"></div>
+                                    </div>
+                                </div>
+                                <div class="controls-bottom">
+                                    <div class="controls-left">
+                                        <button class="control-btn play-pause">
+                                            <svg viewBox="0 0 24 24" class="icon-small">
+                                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                                            </svg>
+                                        </button>
+                                        <div class="time-display">
+                                            <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
+                                    <div class="controls-right">
+                                        <div class="volume-container">
+                                            <button class="control-btn mute-toggle">
+                                                <svg viewBox="0 0 24 24" class="icon-small">
+                                                    <path
+                                                        d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+                                                </svg>
+                                            </button>
+                                            <input type="range" class="volume-slider" min="0" max="1" step="0.1"
+                                                value="1">
+                                        </div>
+                                        <button class="control-btn fullscreen-btn">
+                                            <svg viewBox="0 0 24 24" class="icon-small">
+                                                <path
+                                                    d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Buffering / Loading -->
+                        <div class="video-loader">
+                            <div class="loader-spinner"></div>
+                        </div>
+                    </div>
+                    <div class="player-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR CANVAS TALKS SECTION -->
+    <section class="testimonials-section">
+        <div class="blueprint-grid"></div>
+
+        <div class="testimonials-header">
+            <span class="testimonials-label">TESTIMONIALS</span>
+            <h2 class="testimonials-title">OUR CANVAS TALKS</h2>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="star-rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="review-text">“The attention to detail and the passion they put into their work is unmatched.
+                    My tattoo is a true masterpiece.”</p>
+                <div class="user-profile">
+                    <span class="user-name">Marco R.</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="star-rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="review-text">“From the consultation to the final piece, the experience was nothing short of
+                    exceptional. Highly recommended.”</p>
+                <div class="user-profile">
+                    <span class="user-name">Giulia M.</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="star-rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="review-text">“A studio like no other. They don’t just tattoo — they create art that stays with
+                    you forever.”</p>
+                <div class="user-profile">
+                    <span class="user-name">Luca B.</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="star-rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="review-text">“Professional, clean, and incredibly talented artists. The best decision I’ve
+                    ever made.”</p>
+                <div class="user-profile">
+                    <span class="user-name">Elena T.</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="star-rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="review-text">“Exceptional hygiene and artistic precision. They took my vision and made it ten
+                    times better.”</p>
+                <div class="user-profile">
+                    <span class="user-name">Riccardo V.</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="star-rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="review-text">“Vinci Studio is more than a tattoo parlor; it's a sanctuary for high art. I'm
+                    forever a client.”</p>
+                <div class="user-profile">
+                    <span class="user-name">Matteo P.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- CONTACT & FOOTER SECTION -->
+    <section class="contact-footer-section" id="contact">
+        <div class="particles-container"></div>
+        <div class="blueprint-grid"></div>
+        <div class="section-vignette"></div>
+
+        <div class="contact-container">
+            <!-- Left Side: Form & Info -->
+            <div class="contact-left">
+                <span class="contact-label">VISIT THE SANCTUARY</span>
+                <h2 class="contact-title">WE'D LOVE TO <br> INK YOU</h2>
+
+                <div class="form-info-wrapper">
+                    <form class="contact-form" id="whatsappForm">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <input type="text" id="userName" placeholder="FULL NAME" required>
+                                <div class="input-line"></div>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="userEmail" placeholder="EMAIL ADDRESS" required>
+                                <div class="input-line"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="userSubject" placeholder="SUBJECT">
+                            <div class="input-line"></div>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="userMessage" placeholder="YOUR MESSAGE" rows="4" required></textarea>
+                            <div class="input-line"></div>
+                        </div>
+                        <button type="submit" class="btn-send">
+                            <span>SEND MESSAGE</span>
+                            <span class="arrow">→</span>
+                        </button>
+                    </form>
+
+                    <div class="studio-details">
+                        <div class="detail-item">
+                            <h3>STUDIO ADDRESS</h3>
+                            <p>Venice, Italy <br> 200 Sanctuary Road</p>
+                        </div>
+                        <div class="detail-item">
+                            <h3>OPENING HOURS</h3>
+                            <p>Mon - Sat: 10AM - 8PM <br> Sunday: Closed</p>
+                        </div>
+                        <div class="detail-item">
+                            <h3>CONTACT</h3>
+                            <p>+39 123 456 7890 <br> info@thevinci.studio</p>
+                        </div>
+                        <div class="detail-item">
+                            <h3>FOLLOW US</h3>
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/thevinci_tattoo?fbclid=IwY2xjawRsputleHRuA2FlbQIxMABicmlkETFtOUMyTmEzOUs2YXFYdzRDc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHj7fo5DjHjtxe7a5gMC3BaKFTaKCn8G3ixae97F41HhtOX0n6_gXS7dgPaSj_aem_FLIcJOoKDrhY7saP9yFvzA"
+                                    target="_blank" class="social-icon" title="Instagram"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=61560528471538" class="social-icon"
+                                    target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://wa.me/8337028023" class="social-icon" title="WhatsApp"
+                                    target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Cinematic Map -->
+            <div class="contact-right">
+                <div class="map-wrapper">
+                    <div class="map-rings">
+                        <div class="ring r1"></div>
+                        <div class="ring r2"></div>
+                        <div class="ring r3"></div>
+                    </div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.963944989823!2d88.46215047530399!3d22.692386079406607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89f0014ee001f%3A0x636df0e63a841e14!2sThe%20Vinci%20Tattoo%20Studio!5e0!3m2!1sen!2sin!4v1778351012331!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" class="map-container"></iframe>
+                    <div class="map-overlay"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="main-footer">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <img src="./images/vinciLogo.png" alt="THE VINCI" class="footer-logo-img">
+                    <div class="logo-text">
+                        <span>THE VINCI</span>
+                        <span>TATTOO STUDIO</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-center">
+                <nav class="footer-nav">
+                    <a href="#home">HOME</a>
+                    <a href="#artists">ARTISTS</a>
+                    <a href="#portfolio">PORTFOLIO</a>
+                    <a href="#about">ABOUT</a>
+                    <a href="#contact">CONTACT</a>
+                </nav>
+            </div>
+
+            <div class="footer-right">
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/thevinci_tattoo?fbclid=IwY2xjawRsputleHRuA2FlbQIxMABicmlkETFtOUMyTmEzOUs2YXFYdzRDc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHj7fo5DjHjtxe7a5gMC3BaKFTaKCn8G3ixae97F41HhtOX0n6_gXS7dgPaSj_aem_FLIcJOoKDrhY7saP9yFvzA"
+                        target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61560528471538" target="_blank" title="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/8337028023" target="_blank" title="WhatsApp"><i
+                            class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>Curated by The Vinci. <br> The Art of Ink, © 2024</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <script src="main.js"></script>
+</body>
+
+</html>
