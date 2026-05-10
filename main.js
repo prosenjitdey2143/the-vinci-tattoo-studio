@@ -1,334 +1,166 @@
-// --- PARTICLE SYSTEM ---
+// --- CACHED SELECTORS ---
+const selectors = {
+    navbar: document.querySelector('.navbar'),
+    hamburger: document.querySelector('.nav-hamburger'),
+    mobileMenu: document.querySelector('.mobile-menu'),
+    menuClose: document.querySelector('.menu-close'),
+    body: document.body,
+    particleContainers: document.querySelectorAll('.particles-container')
+};
+
+// --- OPTIMIZED PARTICLE SYSTEM ---
 function initParticles() {
-    const containers = document.querySelectorAll('.particles-container');
-    
-    containers.forEach(container => {
-        const particleCount = 20; // Subtle amount
+    const counts = {
+        'hero-scene': 80, // Optimized count for performance
+        'about-section': 30,
+        'art-in-motion-section': 40
+    };
+
+    selectors.particleContainers.forEach(container => {
+        const parentSection = container.closest('section, main');
+        const count = parentSection ? (counts[parentSection.className.split(' ')[0]] || 30) : 30;
+        const fragment = document.createDocumentFragment();
         
-        for (let i = 0; i < particleCount; i++) {
+        for (let i = 0; i < count; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
             
-            // Random size, position, and duration
             const size = Math.random() * 3 + 1;
-            const posX = Math.random() * 100;
-            const posY = Math.random() * 100;
-            const duration = Math.random() * 20 + 10;
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const duration = Math.random() * 15 + 10;
             const delay = Math.random() * 10;
             
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.left = `${posX}%`;
-            particle.style.top = `${posY}%`;
-            
-            container.appendChild(particle);
-            
-            // GSAP Floating Animation
-            gsap.to(particle, {
-                x: `random(-100, 100)`,
-                y: `random(-100, 100)`,
-                opacity: Math.random() * 0.5 + 0.1,
-                duration: duration,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-                delay: delay
+            Object.assign(particle.style, {
+                width: `${size}px`,
+                height: `${size}px`,
+                left: `${x}%`,
+                top: `${y}%`,
+                opacity: Math.random() * 0.4 + 0.1,
+                animation: `float-up ${duration}s linear infinite`,
+                animationDelay: `-${delay}s`
             });
+            
+            fragment.appendChild(particle);
         }
-    });
-}
-
-// Initialize on load
-window.addEventListener('load', () => {
-    initParticles();
-    initAnimeInteractions();
-    initTestimonials();
-});
-gsap.registerPlugin(ScrollTrigger);
-
-// --- ANIME.JS POWERED INTERACTIONS ---
-function initAnimeInteractions() {
-    // 1. Navigation Links Stagger
-    anime({
-        targets: '.nav-links a',
-        translateY: [20, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(100, {start: 500}),
-        easing: 'easeOutExpo',
-        duration: 1200
-    });
-
-    // 2. Hero Icon Floating (Continuous)
-    anime({
-        targets: '.icon-item',
-        translateY: [-10, 10],
-        direction: 'alternate',
-        loop: true,
-        delay: anime.stagger(200),
-        duration: 3000,
-        easing: 'easeInOutQuad'
-    });
-
-    // 3. Button Hover Effects (Dynamic)
-    const btns = document.querySelectorAll('.btn-explore, .read-more-arrow, .insta-follow-btn');
-    btns.forEach(btn => {
-        btn.addEventListener('mouseenter', () => {
-            anime({
-                targets: btn,
-                scale: 1.05,
-                duration: 400,
-                easing: 'easeOutElastic(1, .6)'
-            });
-        });
-        btn.addEventListener('mouseleave', () => {
-            anime({
-                targets: btn,
-                scale: 1,
-                duration: 400,
-                easing: 'easeOutElastic(1, .6)'
-            });
-        });
+        container.appendChild(fragment);
     });
 }
 
 // --- LENIS BUTTERY SMOOTH SCROLL ---
 const lenis = new Lenis({
-    duration: 1.5,
+    duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    orientation: 'vertical',
-    gestureOrientation: 'vertical',
     smoothWheel: true,
-    wheelMultiplier: 1,
-    infinite: false,
+    wheelMultiplier: 1.1, // Slightly snappier
+    touchMultiplier: 2
 });
 
-// Synchronize ScrollTrigger with Lenis
-lenis.on('scroll', ScrollTrigger.update);
+// Sync ScrollTrigger with Lenis
+lenis.on('scroll', (e) => {
+    ScrollTrigger.update();
+    
+    // Navbar State
+    if (e.scroll > 50) {
+        selectors.navbar?.classList.add('scrolled');
+    } else {
+        selectors.navbar?.classList.remove('scrolled');
+    }
+});
 
-// Use GSAP's ticker for the RAF for better sync
 gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
 });
-
 gsap.ticker.lagSmoothing(0);
 
-// --- GSAP ENTRANCE ANIMATION ---
-const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-
+// --- GLOBAL INITIALIZATION ---
 window.addEventListener('load', () => {
-    // 1. Initial State Hidden
-    gsap.set(".hero-bg", { scale: 1.2, opacity: 0 });
-    gsap.set(".vinci-statue", { y: 100, opacity: 0, scale: 0.9 });
-    gsap.set(".large-word", { y: 50, opacity: 0 });
-    gsap.set(".small-word, .ampersand, .vertical-index span", { opacity: 0 });
-    gsap.set(".glass-card", { y: 30, opacity: 0 });
-    gsap.set(".icon-item", { y: 20, opacity: 0 });
-    gsap.set(".hero-footer", { opacity: 0 });
+    initParticles();
+    initHeroEntrance();
+});
 
-    // 2. Reveal Sequence
+// --- GSAP ENTRANCE ANIMATION ---
+function initHeroEntrance() {
+    const tl = gsap.timeline({ defaults: { ease: "expo.out", duration: 1.5 } });
+
+    // Initial States
+    gsap.set(".hero-bg", { scale: 1.2, opacity: 0 });
+    gsap.set(".vinci-statue", { y: 60, opacity: 0, scale: 0.95 });
+    gsap.set(".large-word", { y: 40, opacity: 0 });
+    gsap.set(".small-word, .vertical-index span, .icon-item, .hero-footer", { opacity: 0 });
+    gsap.set(".glass-card", { y: 20, opacity: 0 });
+
     tl.to(".hero-bg", { opacity: 0.4, scale: 1, duration: 2.5 })
       .to(".vinci-statue", { opacity: 1, y: 0, scale: 1, duration: 2 }, "-=2")
-      .to(".large-word", { opacity: 1, y: 0, duration: 1.5, stagger: 0.2 }, "-=1.5")
-      .to(".small-word, .ampersand, .vertical-index span", { opacity: 1, duration: 1, stagger: 0.1 }, "-=1")
-      .to(".glass-card", { opacity: 1, y: 0, duration: 1, stagger: 0.3 }, "-=1")
-      .to(".icon-item", { opacity: 1, y: 0, duration: 0.8, stagger: 0.1 }, "-=0.5")
-      .to(".hero-footer", { opacity: 1, duration: 1 }, "-=0.5");
-});
-
-// --- ANIME.JS MICRO-ANIMATIONS ---
-
-// Flicker effect for telemetry
-gsap.to(".telemetry-data", {
-    opacity: 0.2,
-    duration: 0.1,
-    repeat: -1,
-    yoyo: true,
-    repeatDelay: 2,
-    ease: "power2.inOut"
-});
-
-// Smooth, non-glitchy floating for the right card
-gsap.to(".right-card", {
-    y: "-=15",
-    rotation: 1,
-    duration: 4,
-    repeat: -1,
-    yoyo: true,
-    ease: "power1.inOut"
-});
-
-// Enhanced Cinematic Zoom-in/Zoom-out for the statue
-anime({
-    targets: '.vinci-statue',
-    scale: [1, 1.08], // More pronounced zoom
-    duration: 8000,   // Slower, more majestic
-    easing: 'easeInOutQuad',
-    direction: 'alternate',
-    loop: true
-});
-
-// Scroll-triggered zoom for depth
-gsap.to(".vinci-statue", {
-    scale: 1.15,
-    y: -30,
-    scrollTrigger: {
-        trigger: ".hero-scene",
-        start: "top top",
-        end: "bottom top",
-        scrub: 1
-    }
-});
-
-// Hover effect for navigation links
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('mouseenter', () => {
-        gsap.to(link, { scale: 1.1, color: "#D4AF37", duration: 0.3 });
-    });
-    link.addEventListener('mouseleave', () => {
-        gsap.to(link, { scale: 1, color: "#FFFFFF", duration: 0.3 });
-    });
-});
-
-// --- ABOUT SECTION ANIMATIONS ---
-gsap.registerPlugin(ScrollTrigger);
-
-const aboutTl = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".about-section",
-        start: "top 70%",
-        end: "bottom bottom",
-        toggleActions: "play none none reverse"
-    }
-});
-
-// Initial states for about section elements
-gsap.set(".about-main-img", { scale: 1.2, filter: "brightness(0)" });
-gsap.set(".about-label", { y: 20, opacity: 0 });
-gsap.set(".about-heading", { y: 40, opacity: 0 });
-gsap.set(".about-description p", { y: 30, opacity: 0 });
-gsap.set(".about-signature, .about-cta", { y: 20, opacity: 0 });
-gsap.set(".about-panel .panel-inner > *", { scale: 0.8, opacity: 0 });
-
-aboutTl
-    .to(".about-main-img", { scale: 1, filter: "brightness(0.8) contrast(1.1) sepia(0.2)", duration: 2, ease: "power3.out" })
-    .to(".about-label", { y: 0, opacity: 1, duration: 1 }, "-=1.5")
-    .to(".about-heading", { y: 0, opacity: 1, duration: 1.2, ease: "power4.out" }, "-=1.2")
-    .to(".about-description p", { y: 0, opacity: 1, duration: 0.8, stagger: 0.15 }, "-=0.8")
-    .to(".about-signature, .about-cta", { y: 0, opacity: 1, duration: 1, stagger: 0.2 }, "-=0.5")
-    .to(".about-panel .panel-inner > *", { scale: 1, opacity: 1, duration: 0.8, stagger: 0.2 }, "-=0.8");
-
-// Subtle parallax for the main image
-gsap.to(".about-main-img", {
-    y: -50,
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".about-section",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true
-    }
-});
-
-// --- DYNAMIC PARTICLE SYSTEM ---
-function createParticles() {
-    const heroContainer = document.querySelector('.hero-scene .particles-container');
-    const aboutContainer = document.querySelector('.about-section .particles-container');
-    const motionContainer = document.querySelector('.art-in-motion-section .particles-container');
-    
-    const generate = (container, count) => {
-        if (!container) return;
-        for (let i = 0; i < count; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            
-            const x = Math.random() * 100;
-            const y = Math.random() * 100;
-            const size = Math.random() * 2 + 1;
-            const delay = Math.random() * 20;
-            const duration = Math.random() * 20 + 10;
-            
-            particle.style.left = `${x}%`;
-            particle.style.top = `${y}%`;
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.animationDelay = `-${delay}s`;
-            particle.style.animationDuration = `${duration}s`;
-            
-            container.appendChild(particle);
-        }
-    };
-
-    generate(heroContainer, 150); // High density for hero
-    generate(aboutContainer, 40); // Medium density for about
-    generate(motionContainer, 60); // Cinematic density for motion
+      .to(".large-word", { opacity: 1, y: 0, stagger: 0.15 }, "-=1.5")
+      .to(".small-word, .vertical-index span", { opacity: 1, stagger: 0.05 }, "-=1")
+      .to(".glass-card", { opacity: 1, y: 0, stagger: 0.2 }, "-=0.8")
+      .to(".icon-item, .hero-footer", { opacity: 1, stagger: 0.1, duration: 1 }, "-=0.5");
 }
 
-window.addEventListener('load', createParticles);
-
-// Navbar Scroll State
-window.addEventListener('scroll', () => {
-    const nav = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-});
-
 // --- MOBILE MENU TOGGLE ---
-const hamburger = document.querySelector('.nav-hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
-const menuClose = document.querySelector('.menu-close');
-const body = document.body;
-
 function toggleMenu(state) {
-    if (!mobileMenu) return;
-    const isActive = state !== undefined ? state : !mobileMenu.classList.contains('active');
+    if (!selectors.mobileMenu) return;
+    const isActive = state !== undefined ? state : !selectors.mobileMenu.classList.contains('active');
     
-    hamburger.classList.toggle('active', isActive);
-    mobileMenu.classList.toggle('active', isActive);
+    selectors.hamburger?.classList.toggle('active', isActive);
+    selectors.mobileMenu.classList.toggle('active', isActive);
     
     if (isActive) {
-        body.style.overflow = 'hidden';
+        selectors.body.style.overflow = 'hidden';
         lenis.stop();
     } else {
-        body.style.overflow = '';
+        selectors.body.style.overflow = '';
         lenis.start();
     }
 }
 
-if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => toggleMenu());
-    if (menuClose) {
-        menuClose.addEventListener('click', () => toggleMenu(false));
+if (selectors.hamburger && selectors.mobileMenu) {
+    selectors.hamburger.addEventListener('click', () => toggleMenu());
+    if (selectors.menuClose) {
+        selectors.menuClose.addEventListener('click', () => toggleMenu(false));
     }
 }
 
-// Global Smooth Scroll & Mobile Menu Closer
+// --- GLOBAL SMOOTH SCROLL & MOBILE MENU CLOSER ---
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
 
-        // If it's a mobile link, close the menu first
         if (this.closest('.mobile-menu')) {
             toggleMenu(false);
         }
 
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-            // Wait for the next tick to ensure lenis.start() has fired
-            requestAnimationFrame(() => {
-                lenis.scrollTo(targetElement, {
-                    offset: -20,
-                    duration: 1.5,
-                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
-                });
+            lenis.scrollTo(targetElement, {
+                offset: -20,
+                duration: 1.2
             });
         }
     });
 });
+
+// --- ABOUT SECTION ANIMATIONS ---
+const aboutTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".about-section",
+        start: "top 70%",
+        toggleActions: "play none none reverse"
+    }
+});
+
+gsap.set(".about-main-img", { scale: 1.1, filter: "brightness(0)" });
+gsap.set(".about-label, .about-heading, .about-description p, .about-signature, .about-cta, .about-panel .panel-inner > *", { y: 30, opacity: 0 });
+
+aboutTl
+    .to(".about-main-img", { scale: 1, filter: "brightness(0.8) contrast(1.1)", duration: 2 })
+    .to(".about-label, .about-heading", { y: 0, opacity: 1, stagger: 0.1 }, "-=1.5")
+    .to(".about-description p", { y: 0, opacity: 1, stagger: 0.1 }, "-=1")
+    .to(".about-signature, .about-cta", { y: 0, opacity: 1, stagger: 0.1 }, "-=0.5")
+    .to(".about-panel .panel-inner > *", { y: 0, opacity: 1, stagger: 0.1 }, "-=0.8");
 
 // --- VIDEO PLAYER LOGIC ---
 const video = document.getElementById('studioVideo');
