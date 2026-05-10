@@ -1,6 +1,6 @@
 # The Vinci Tattoo Studio
 
-![The Vinci Logo](./images/vinciLogo.png)
+![Website Preview](./preview.jpg)
 
 A high-end, cinematic luxury tattoo studio website inspired by the genius of Leonardo da Vinci. This project blends classical art principles with modern web technology to create an ultra-premium digital experience.
 
