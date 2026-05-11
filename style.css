@@ -609,7 +609,7 @@ body {
         width: 100%;
         align-items: center;
         text-align: center;
-        margin-bottom: 50vh;
+        margin-bottom: 45vh;
     }
 
     .title-wrap {
@@ -1056,7 +1056,7 @@ body {
     }
 
     .vinci-statue {
-        height: 85%;
+        height: 83%;
         width: auto;
         object-fit: contain;
         transform: translateY(10%);
